@@ -167,108 +167,124 @@ Feel free to share your solutions to these exercises in the comments section bel
 
 ## **Solutions to Previous Exercises (Part 3):**
 
-### Exercise 1:
+Certainly! Here are solutions to the exercises in Part 3, along with explanations and expected outputs:
 
-**Question:** Given a list of numbers, write a Python program to find the sum of all the numbers in the list.
-
-**Solution:**
+**Exercise 1:** Create a list of your favorite movies and print them.
 
 ```python
-# Define a list of numbers
-numbers = [10, 20, 30, 40, 50]
+# Define a list of favorite movies
+favorite_movies = ["Infinity war", "Vijay Thalapathy's Master", "3 Idiots", "Drishyam"]
 
-# Initialize a variable to store the sum
-total = 0
-
-# Use a for loop to iterate through the list and calculate the sum
-for number in numbers:
-    total += number
-
-# Print the result
-print("Sum of numbers:", total)
+# Print the list of favorite movies
+print("My Favorite Movies:")
+for movie in favorite_movies:
+    print(movie)
 ```
+
+**Explanation:** In this exercise, we've defined a list `favorite_movies` containing the titles of your favorite movies. We then use a `for` loop to iterate through the list and print each movie title.
 
 **Expected Output:**
 
 ```bash
-Sum of numbers: 150
+My Favorite Movies:
+Infinity wars
+Vijay Thalapathy's Master
+3 Idiots
+Drishyam
 ```
 
-### Exercise 2:
-
-**Question:** Create a list of numbers and use a `while` loop to find the sum of all the numbers in the list.
-
-**Solution:**
+**Exercise 2:** Create a tuple of your personal information (name, age, city) and display it.
 
 ```python
-# Define a list of numbers
-numbers = [10, 20, 30, 40, 50]
+# Define a tuple with personal information
+personal_info = ("Virat", 34, "Delhi")
 
-# Initialize variables
-total = 0
-index = 0
-
-# Use a while loop to iterate through the list and calculate the sum
-while index < len(numbers):
-    total += numbers[index]
-    index += 1
-
-# Print the result
-print("Sum of numbers:", total)
+# Display the personal information
+print("Personal Information:")
+print("Name:", personal_info[0])
+print("Age:", personal_info[1])
+print("City:", personal_info[2])
 ```
+
+**Explanation:** In this exercise, we've defined a tuple `personal_info` containing your name, age, and city. We then use indexing to access and display each piece of personal information.
 
 **Expected Output:**
 
 ```bash
-Sum of numbers: 150
+Personal Information:
+Name: Virat
+Age: 34
+City: Delhi
 ```
 
-### Exercise 3:
+**Exercise 3:** Build a dictionary representing a book with keys like "title," "author," and "year," and then print the book's details.
 
-**Question:** Given a list of words, use a `for` loop to count and print the number of letters in each word.
+```python
+# Define a dictionary representing a book
+book = {
+    "title": "Shriman Yogi",
+    "author": "Ranjit Desai",
+    "year": 1963
+}
 
-**Solution:**
+# Print the book's details
+print("Book Details:")
+print("Title:", book["title"])
+print("Author:", book["author"])
+print("Year:", book["year"])
+```
+
+**Explanation:** In this exercise, we've defined a dictionary `book` with keys for the title, author, and year of the book. We use these keys to access and print the book's details.
+
+**Expected Output:**
+
+```bash
+Book Details:
+Title: Shriman Yogi
+Author: Ranjit Desai
+Year: 1963
+```
+
+**Exercise 4:** Create two sets with your favorite colors and a friend's favorite colors. Find the common colors between the sets and print them.
+
+```python
+# Define sets of your favorite colors and your friend's favorite colors
+my_favorite_colors = {"red", "green", "blue", "yellow"}
+friend_favorite_colors = {"blue", "green", "purple", "orange"}
+
+# Find and print the common colors
+common_colors = my_favorite_colors.intersection(friend_favorite_colors)
+print("Common Favorite Colors:", common_colors)
+```
+
+**Explanation:** In this exercise, we've defined two sets, one for your favorite colors and one for your friend's favorite colors. We use the `intersection()` method to find the common colors between the sets.
+
+**Expected Output:**
+
+```bash
+Common Favorite Colors: {'green', 'blue'}
+```
+
+**Exercise 5:** Given a list of words, write a Python program that finds and prints the longest word(s) in the list. If there are multiple longest words, print all of them.
 
 ```python
 # Define a list of words
-words = ["apple", "banana", "cherry", "date"]
+words = ["apple", "banana", "cherry", "date", "fig"]
 
-# Use a for loop to iterate through the list and count the letters in each word
-for word in words:
-    letter_count = len(word)
-    print(f"The word '{word}' has {letter_count} letters.")
+# Find the length of the longest word(s)
+max_length = max(len(word) for word in words)
+
+# Find and print the longest word(s)
+longest_words = [word for word in words if len(word) == max_length]
+print("Longest Word(s):", longest_words)
 ```
+
+**Explanation:** In this exercise, we first find the length of the longest word(s) in the list using the `max()` function and a generator expression. Then, we use a list comprehension to collect and print the longest word(s).
 
 **Expected Output:**
-
-```bash
-The word 'apple' has 5 letters.
-The word 'banana' has 6 letters.
-The word 'cherry' has 6 letters.
-The word 'date' has 4 letters.
-```
-
-### Exercise 4:
-
-**Question:** Write a program that takes a list of numbers and uses a list comprehension to create a new list containing only the even numbers from the original list.
-
-**Solution:**
 
 ```python
-# Define a list of numbers
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-# Use a list comprehension to filter even numbers
-even_numbers = [x for x in numbers if x % 2 == 0]
-
-# Print the result
-print("Even numbers:", even_numbers)
+Longest Word(s): ['banana', 'cherry']
 ```
 
-**Expected Output:**
-
-```bash
-Even numbers: [2, 4, 6, 8, 10]
-```
-
-These detailed solutions should help you understand the exercises from Part 3 and their expected outputs. Feel free to reach out if you have any further questions or need additional explanations!
+These solutions should help you practice working with Python data structures. If you have any questions or need further explanations, feel free to ask. Stay tuned for the next installment of our series, where we'll explore more advanced topics in Python scripting!
