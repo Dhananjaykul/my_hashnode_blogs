@@ -244,10 +244,4 @@ That's it! Congratulations! 🎊🎉 You have successfully scaled your infrastru
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1686146031095/4bafe4ec-b62c-4ed5-8a6a-ba1038d6ef1b.png align="center")
 
-## **Code Availability🌟**
-
-You can access the complete code for this project on GitHub. The code is available in the following GitHub repository: \[will update soon\]
-
-Feel free to explore the code, make modifications, and contribute to the project.
-
 Happy Learning! 😊
