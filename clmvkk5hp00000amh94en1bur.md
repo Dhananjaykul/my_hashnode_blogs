@@ -5,6 +5,7 @@ seoDescription: "Excited to kick off my blog series on 'Python for Scripting'! ð
 datePublished: Sat Sep 23 2023 05:07:21 GMT+0000 (Coordinated Universal Time)
 cuid: clmvkk5hp00000amh94en1bur
 slug: python-basics
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1699688080635/3da402b1-ad6f-473d-b1cb-1e1a6445df5d.png
 tags: python, automation, devops, scripting, cybersecurity-1
 
 ---
