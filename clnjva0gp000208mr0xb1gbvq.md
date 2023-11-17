@@ -153,6 +153,8 @@ print(squares)
 
 ## Exercise
 
+![Python Exercises and Interesting Codes - TechNData - Tech & Data](https://www.techndata.com/wp-content/uploads/2018/07/Python-exercises.png align="left")
+
 Now, let's put your knowledge of loops and iteration to the test with some exercises:
 
 **Exercise 1:** Write a Python program to calculate the factorial of a given number using a `for` loop.
