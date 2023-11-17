@@ -341,6 +341,8 @@ Now, let's conclude this part with a final exercise:
 
 ## Exercise
 
+![Python Exercises and Interesting Codes - TechNData - Tech & Data](https://www.techndata.com/wp-content/uploads/2018/07/Python-exercises.png align="left")
+
 Now that you've learned about Python data structures, let's practice:
 
 **Exercise 1:** Create a list of your favorite movies and print them.
