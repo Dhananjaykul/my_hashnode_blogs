@@ -238,6 +238,8 @@ These solutions provide practical implementations for the exercises, showcasing 
 
 ## Putting Your Regex Skills to the Test: Practical Exercises
 
+![Python Exercises and Interesting Codes - TechNData - Tech & Data](https://www.techndata.com/wp-content/uploads/2018/07/Python-exercises.png align="left")
+
 Let's apply your newfound knowledge of regular expressions through hands-on exercises. These exercises cover real-life scenarios where regex can be incredibly useful.
 
 ### Exercise 1: Phone Number Validator
