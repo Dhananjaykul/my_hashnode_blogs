@@ -136,6 +136,8 @@ You can vote!
 
 ## Exercise
 
+![Python Exercises and Interesting Codes - TechNData - Tech & Data](https://www.techndata.com/wp-content/uploads/2018/07/Python-exercises.png align="left")
+
 Now that you've learned the basics, let's put your knowledge to the test with some exercises:
 
 **Exercise 1:** Write a Python script that calculates the area of a rectangle. Prompt the user to enter the length and width as input.
