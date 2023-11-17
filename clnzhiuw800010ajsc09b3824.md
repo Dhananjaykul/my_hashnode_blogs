@@ -321,6 +321,8 @@ These solutions should help you understand and practice the concepts of loops an
 
 ## Exercise
 
+![Python Exercises and Interesting Codes - TechNData - Tech & Data](https://www.techndata.com/wp-content/uploads/2018/07/Python-exercises.png align="left")
+
 Now, let's apply your knowledge of functions and modules with some exercises:
 
 **Exercise 1:** Create a Python module named `math_operations` that contains functions to calculate the area and circumference of a circle based on its radius. Then, create a script that imports this module and uses the functions to calculate the area and circumference of a circle with a radius of 5 units.
