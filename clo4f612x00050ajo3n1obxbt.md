@@ -352,6 +352,8 @@ These solutions and explanations should help you understand how to implement and
 
 ## Exercises
 
+![Python Exercises and Interesting Codes - TechNData - Tech & Data](https://www.techndata.com/wp-content/uploads/2018/07/Python-exercises.png align="left")
+
 Now, let's put your file handling skills to the test with some exercises:
 
 **Exercise 1:** Create a Python script that reads the contents of a text file and counts the number of words in it.
