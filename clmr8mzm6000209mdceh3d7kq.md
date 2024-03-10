@@ -235,8 +235,6 @@ With our Terraform configuration ready, it's time to deploy our Terramino game s
     
 4. **Access Your Game**: Once the deployment is complete, you can access your game by opening a web browser and navigating to the public IP address of your EC2 instance.
     
-    %[https://youtu.be/_Q--ZsrlZZ0] 
-    
 
 ## Conclusion 🎉
 
