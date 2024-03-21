@@ -5,6 +5,7 @@ seoDescription: "Today's digital age, where businesses rely heavily on cloud com
 datePublished: Thu Mar 21 2024 09:19:29 GMT+0000 (Coordinated Universal Time)
 cuid: clu10tqen000709jnfdn9f3e6
 slug: aws-resource-tracking-with-shell-scripting-part-1
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1711013672027/2d8fc6fb-7510-413b-b218-eee073ef58a2.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1711011619134/c6b05b6f-2d10-4089-ab27-84e6c02385f6.gif
 tags: aws, automation, shell-script
 
