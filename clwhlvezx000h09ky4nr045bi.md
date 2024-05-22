@@ -43,13 +43,13 @@ sudo apt-get install xterm
 
 The network topology consists of the following components:
 
-* **Router** `r1`: Connected to `pc1` via network A and to `r2` via network B.
+* **Router**`r1`: Connected to `pc1` via network A and to `r2` via network B.
     
-* **Router** `r2`: Connected to `pc2` via network C and to `r1` via network B.
+* **Router**`r2`: Connected to `pc2` via network C and to `r1` via network B.
     
-* **PC** `pc1`: Connected to `r1` via network A.
+* **PC**`pc1`: Connected to `r1` via network A.
     
-* **PC** `pc2`: Connected to `r2` via network B.
+* **PC**`pc2`: Connected to `r2` via network B.
     
 
 The simplified IP address scheme is as follows:
@@ -208,7 +208,9 @@ Start the Kathara lab and test the connectivity.
 sudo kathara lstart
 ```
 
-2. **Check IP configurations**
+2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716386509021/2697377e-3594-474c-b422-2d2d9fd50815.png align="center")
+    
+    **Check IP configurations**
     
 
 ```bash
@@ -218,7 +220,9 @@ sudo kathara exec r1 -- ip addr show
 sudo kathara exec r2 -- ip addr show
 ```
 
-3. **Test connectivity**
+3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716386573292/419128ac-a34f-43d6-98c0-6ad1032c0c03.png align="center")
+    
+    **Test connectivity**
     
 
 ```bash
@@ -226,5 +230,9 @@ sudo kathara exec pc1 -- ping 192.168.1.1  # From pc1 to r1
 sudo kathara exec pc1 -- ping 192.168.2.5  # From pc1 to pc2
 sudo kathara exec pc2 -- ping 192.168.2.1  # From pc2 to r2
 ```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716386603106/2e06fc83-3d00-440b-9c95-349b4a453eec.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716387209002/c6949f5e-c528-4608-a20b-96cef8e7d72c.png align="center")
 
 This setup ensures that `pc1` and `pc2` can communicate through the network established by the two routers, demonstrating the basic functionality of a routed network using Kathara.
