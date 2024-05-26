@@ -1,5 +1,5 @@
 ---
-title: "Kathara Network Configuration and Documentation"
+title: "How to Configure Kathara Static Routing"
 seoTitle: "Kathara Network Configuration and Documentation"
 seoDescription: "Guide to setting up and testing a network with Kathara, including configuration files, network topology, and connectivity testing"
 datePublished: Wed May 22 2024 09:12:23 GMT+0000 (Coordinated Universal Time)
@@ -9,9 +9,27 @@ tags: networking, networksimulation, kathara
 
 ---
 
-This document provides a detailed description of setting up a network using Kathara, including configuration files, network topology, and testing connectivity. The network consists of two routers (`r1`, `r2`) and two PCs (`pc1`, `pc2`).
+## **Introduction**
 
-#### Prerequisites
+A router is essential in a network because it routes packets. It enables a computer to communicate with other computers that are not on the same network or subnet. A router accesses a routing table to determine where packets should be sent. The routing table lists destination addresses. Static and dynamic configurations can both be listed on the routing table in order to get packets to their specific destination.
+
+Static Routing is a manually configured fixed pathway that a packet must travel through to reach a destination. Static routings uses less network resources than dynamic routings because they do not constantly calculate and analyze routing updates.
+
+It is best to use static routes when network traffic is predictable, and the network design is simple. It is not recommended to use static routes in a large environment where networks are constantly changing because static routes would not update to any network changes. When using static routes, you would need to configure the other router to have static routes as well depending on what you are trying to do.
+
+One example where static routes can be useful would be specifying a gateway of last resort (a default router to which all unrouteable packets are sent). Another example is to facilitate communication between routers that are not able to communicate on your current network topology.
+
+Dynamic routing is calculated by using dynamic routing algorithms. Dynamic routing protocols automatically create and update the routing table. Most networks use dynamic routes and might have at least one or two static routes configured for special cases.
+
+Below is an example of a topology that we are going to configure static routes for. In the topology, PC1 will not be able to communicate with PC2 and vice versa until a static route is created.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731350335/42d8ac4c-4cfa-48f9-a350-f95206068822.png align="center")
+
+This is a network diagram that is going to be used to help demonstrate IPv4 static route. In this topology, we are using /24 as our subnet mask.
+
+## **Description**
+
+This blog explains how to configure static routes using Kathara, an open-source network emulation tool.A step-by-step guide to setting up a simple network topology and configuring static routes to ensure network connectivity.
 
 Before running the lab, ensure Kathara and Docker are installed, along with xterm for terminal emulation.
 
@@ -39,200 +57,253 @@ sudo apt-get update
 sudo apt-get install xterm
 ```
 
-#### Network Topology
+## Step 1 – Network Topology
 
-The network topology consists of the following components:
+We will set up a simple network topology with two PCs and two routers connected through different collision domains (network segments).
 
-* **Router**`r1`: Connected to `pc1` via network A and to `r2` via network B.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731394953/4dea2339-799a-4930-9a73-5a63eb79fff1.png align="center")
+
+### IP Addresses and Interfaces
+
+* `pc1`: 192.168.1.2/24 (eth0)
     
-* **Router**`r2`: Connected to `pc2` via network C and to `r1` via network B.
+* `r1`: 192.168.1.1/24 (eth0), 10.0.0.1/30 (eth1)
     
-* **PC**`pc1`: Connected to `r1` via network A.
+* `r2`: 10.0.0.2/30 (eth1), 192.168.2.1/24 (eth0)
     
-* **PC**`pc2`: Connected to `r2` via network B.
-    
-
-The simplified IP address scheme is as follows:
-
-* **Network A**: `192.168.1.0/24`
-    
-    * `pc1`: `192.168.1.5`
-        
-    * `r1`: `192.168.1.1`
-        
-* **Network B**: `10.0.0.0/30`
-    
-    * `r1`: `10.0.0.1`
-        
-    * `r2`: `10.0.0.2`
-        
-* **Network C**: `192.168.2.0/24`
-    
-    * `pc2`: `192.168.2.5`
-        
-    * `r2`: `192.168.2.1`
-        
-
-#### Directory Setup
-
-First, create a directory for the lab and navigate into it:
-
-```bash
-mkdir -p ~/kathara_labs/my_lab
-cd ~/kathara_labs/my_lab
-```
-
-#### Configuration Files
-
-Create and edit the following files with the given content:
-
-1. **lab.conf**
+* `pc2`: 192.168.2.2/24 (eth0)
     
 
-This file defines the network topology by specifying the connections between network interfaces.
+## Step 2 – The Lab Setup
 
-```bash
-nano lab.conf
-```
+### Directory Structure
 
-```ini
-# lab.conf: Defines the network topology
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731523061/f7f21bfb-2660-4de4-88b0-b9c893ba3dcb.png align="center")
 
-# Router r1 interfaces
-# Connect r1 eth0 to network A
+Create the following files in your lab directory:
+
+* `lab.conf`
+    
+* `pc1.startup`
+    
+* `pc2.startup`
+    
+* `r1.startup`
+    
+* `r2.startup`
+    
+
+### Configuration Files
+
+`lab.conf`
+
+```plaintext
 r1[0]=A
-# Connect r1 eth1 to network B
 r1[1]=B
-
-# Router r2 interfaces
-# Connect r2 eth0 to network C
 r2[0]=C
-# Connect r2 eth1 to network B
 r2[1]=B
-
-# PC pc1 interface
-# Connect pc1 eth0 to network A
 pc1[0]=A
-
-# PC pc2 interface
-# Connect pc2 eth0 to network B
-pc2[0]=B
+pc2[0]=C
 ```
 
-2. **pc1.startup**
-    
-
-This script configures the network settings for `pc1`.
+`pc1.startup`
 
 ```bash
-nano pc1.startup
+ip address add 192.168.1.2/24 dev eth0
 ```
 
-```bash
-# pc1.startup: Configures network settings for pc1
+`pc2.startup`
 
-# Assign IP address to pc1's eth0 interface and bring it up
-ip address add 192.168.1.5/24 dev eth0
-ip link set eth0 up
+```bash
+ip address add 192.168.2.2/24 dev eth0
 ```
 
-3. **pc2.startup**
-    
-
-This script configures the network settings for `pc2`.
+`r1.startup`
 
 ```bash
-nano pc2.startup
-```
-
-```bash
-# pc2.startup: Configures network settings for pc2
-
-# Assign IP address to pc2's eth0 interface and bring it up
-ip address add 192.168.2.5/24 dev eth0
-ip link set eth0 up
-```
-
-4. **r1.startup**
-    
-
-This script configures the network settings for `r1`.
-
-```bash
-nano r1.startup
-```
-
-```bash
-# r1.startup: Configures network settings for r1
-
-# Assign IP addresses to r1's interfaces and bring them up
 ip address add 192.168.1.1/24 dev eth0
 ip address add 10.0.0.1/30 dev eth1
-ip link set eth0 up
-ip link set eth1 up
-
-# Add a route to network 192.168.2.0/24 via 10.0.0.2
-ip route add 192.168.2.0/24 via 10.0.0.2
 ```
 
-5. **r2.startup**
-    
-
-This script configures the network settings for `r2`.
+`r2.startup`
 
 ```bash
-nano r2.startup
-```
-
-```bash
-# r2.startup: Configures network settings for r2
-
-# Assign IP addresses to r2's interfaces and bring them up
 ip address add 192.168.2.1/24 dev eth0
 ip address add 10.0.0.2/30 dev eth1
-ip link set eth0 up
-ip link set eth1 up
-
-# Add a route to network 192.168.1.0/24 via 10.0.0.1
-ip route add 192.168.1.0/24 via 10.0.0.1
 ```
 
-#### Testing the Configuration
+### Starting the Lab
 
-Start the Kathara lab and test the connectivity.
-
-1. **Start the Lab**
-    
+Navigate to the directory containing the `lab.conf` file and start the lab using the Kathara command:
 
 ```bash
-sudo kathara lstart
+kathara lstart
 ```
 
-2. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716386509021/2697377e-3594-474c-b422-2d2d9fd50815.png align="center")
-    
-    **Check IP configurations**
-    
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731616909/548e7c6e-05ff-42fb-8cbe-6dd86d6d6eb3.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731679614/f137a696-ab37-47ed-b7be-d2a92a9afadf.png align="center")
+
+## Step 3 – Testing Connectivity
+
+### Directly Connected Networks
+
+Check connectivity within directly connected networks.
+
+**Ping from** `pc1` to `r1`
 
 ```bash
-sudo kathara exec pc1 -- ip addr show
-sudo kathara exec pc2 -- ip addr show
-sudo kathara exec r1 -- ip addr show
-sudo kathara exec r2 -- ip addr show
+root@pc1:~$ ping 192.168.1.1
 ```
 
-3. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716386573292/419128ac-a34f-43d6-98c0-6ad1032c0c03.png align="center")
-    
-    **Test connectivity**
-    
+Expected result:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731774574/9e156039-32bf-4681-9e86-919a6822fced.png align="center")
+
+**Ping from** `pc2` to `r2`
 
 ```bash
-sudo kathara exec pc1 -- ping 192.168.1.1  # From pc1 to r1
-sudo kathara exec pc1 -- ping 192.168.2.5  # From pc1 to pc2
-sudo kathara exec pc2 -- ping 192.168.2.1  # From pc2 to r2
+root@pc2:~$ ping 192.168.2.1
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716386603106/2e06fc83-3d00-440b-9c95-349b4a453eec.png align="center")
+Expected result:
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716387209002/c6949f5e-c528-4608-a20b-96cef8e7d72c.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731850223/99160367-8b22-4d27-bcc1-ae9f3381d0a6.png align="center")
 
-This setup ensures that `pc1` and `pc2` can communicate through the network established by the two routers, demonstrating the basic functionality of a routed network using Kathara.
+### Indirectly Connected Networks
+
+Attempt to ping networks that are not directly connected.
+
+**Ping from** `pc1` to `r2`
+
+```bash
+root@pc1:~$ ping 10.0.0.2
+```
+
+Expected result:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716732016237/72db7ec6-5819-4e23-bb4e-7c632ada7700.png align="center")
+
+## Step 4 – Adding Default Routes on PCs
+
+To enable `pc1` and `pc2` to reach networks beyond their directly connected segment, add default routes.
+
+**On** `pc1`
+
+```bash
+root@pc1:~$ ip route add default via 192.168.1.1 dev eth0
+```
+
+**On** `pc2`
+
+```bash
+root@pc2:~$ ip route add default via 192.168.2.1 dev eth0
+```
+
+### Verify Default Routes
+
+**Check routing table on** `pc1`
+
+```bash
+root@pc1:~$ ip route
+```
+
+**Check routing table on** `pc2`
+
+```bash
+root@pc2:~$ ip route
+```
+
+Expected result:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716732263074/3aed0845-bbb7-4f70-9765-f08a451a5166.png align="center")
+
+## Step 5 – Configuring Static Routes on Routers
+
+To ensure the routers can forward packets between `pc1` and `pc2`, add static routes.
+
+### On `r1`
+
+```bash
+root@r1:~$ ip route add 192.168.2.0/24 via 10.0.0.2 dev eth1
+```
+
+### On `r2`
+
+```bash
+root@r2:~$ ip route add 192.168.1.0/24 via 10.0.0.1 dev eth1
+```
+
+### Verify Static Routes
+
+**Check routing table on** `r1`
+
+```bash
+root@r1:~$ ip route
+```
+
+Expected result:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716733678724/5bce65af-4e52-43cd-93fc-1df79696e000.png align="center")
+
+**Check routing table on** `r2`
+
+```bash
+root@r2:~$ ip route
+```
+
+Expected result:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716733717113/3e0f6bcf-9ed1-4933-a4d3-0a3039e9a041.png align="center")
+
+## Step 6 – Final Connectivity Test
+
+### Ping from `pc1` to `pc2`
+
+```bash
+root@pc1:~$ ping 192.168.2.2
+```
+
+Expected result:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716733771410/f5b2381e-fa37-4fd9-ae44-50d4398dd666.png align="center")
+
+### Ping from `pc2` to `pc1`
+
+```bash
+root@pc2:~$ ping 192.168.1.2
+```
+
+Expected result:
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716733829546/77a94202-1c44-4e65-8454-b3aff6038c81.png align="center")
+
+## Networking Concepts Explained
+
+### IP Addressing
+
+Each device in a network is assigned a unique IP address. In our lab, we used private IP addresses within the ranges of `192.168.1.0/24` and `192.168.2.0/24`.
+
+### Subnets
+
+A subnet is a segmented piece of a larger network. Subnets help to organize networks efficiently. For example, `192.168.1.0/24` represents a subnet where the first 24 bits are used for network identification and the last 8 bits for host identification.
+
+### Routing
+
+Routing is the process of selecting paths in a network along which to send network traffic. Routers use routing tables to determine the best path to forward packets.
+
+### Static Routing
+
+Static routing involves manually adding routes to a router's routing table. This is useful in small networks or for specific static paths in larger networks. Static routes do not change unless manually altered.
+
+### Default Route
+
+A default route is a route that a router uses when no other known route matches the destination IP address. It typically directs packets to another router that can handle them.
+
+## Conclusion
+
+By following this guide, you should be able to configure static routes in a simple network topology using Kathara. Understanding static routing, default routes, and subnetting is crucial for managing and troubleshooting networks effectively. To stop the lab, use the command:
+
+```bash
+kathara lclean
+```
