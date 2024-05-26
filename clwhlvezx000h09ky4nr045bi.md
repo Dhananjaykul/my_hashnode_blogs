@@ -1,11 +1,11 @@
 ---
 title: "How to Configure Kathara Static Routing"
-seoTitle: "Kathara Network Configuration and Documentation"
-seoDescription: "Guide to setting up and testing a network with Kathara, including configuration files, network topology, and connectivity testing"
+seoTitle: "Configuring Static Routing in Kathara"
+seoDescription: "Learn how to configure static routes in Kathara for network connectivity with this step-by-step guide"
 datePublished: Wed May 22 2024 09:12:23 GMT+0000 (Coordinated Universal Time)
 cuid: clwhlvezx000h09ky4nr045bi
 slug: kathara-network-configuration-and-documentation
-tags: networking, networksimulation, kathara
+tags: networking, networksimulation, kathara, static-routing
 
 ---
 
@@ -307,3 +307,5 @@ By following this guide, you should be able to configure static routes in a simp
 ```bash
 kathara lclean
 ```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716734072546/fbd4f0c3-a5f9-4e1c-9e96-83be7487e675.png align="center")
