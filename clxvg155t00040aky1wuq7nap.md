@@ -1,5 +1,5 @@
 ---
-title: "Understanding SQL Injection Attacks: Types and Effects"
+title: "SQL Injection Attacks: Types and Effects"
 seoTitle: "Understanding SQL Injection Attacks: Types and Effects"
 seoDescription: "Guide on SQL Injection: types, impacts on CIA, mitigation techniques"
 datePublished: Wed Jun 26 2024 06:17:21 GMT+0000 (Coordinated Universal Time)
