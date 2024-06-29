@@ -16,7 +16,7 @@ In the past sections, we discussed the different types of SQL injection vulnerab
 
 If you missed it, you can [`check it out here`](https://dhananjaykulkarni.hashnode.dev/steps-to-detect-sql-injection-vulnerabilities)
 
-[In this sectio](https://dhananjaykulkarni.hashnode.dev/steps-to-detect-sql-injection-vulnerabilities#)n, we'll dive into how to exploit SQL injection vulnerabilities to achieve your end goal. This will vary depending on the type of SQL injection vulnerability you're dealing with. We'll cover five different types: error-based SQL injection, union-based SQL injection, Boolean-based blind SQL injection, time-based blind SQL injection, and out-of-band SQL injection.
+In this section, we'll dive into how to exploit SQL injection vulnerabilities to achieve your end goal. This will vary depending on the type of SQL injection vulnerability you're dealing with. We'll cover five different types: error-based SQL injection, union-based SQL injection, Boolean-based blind SQL injection, time-based blind SQL injection, and out-of-band SQL injection.
 
 ### 1\. Error-Based SQL Injection
 
