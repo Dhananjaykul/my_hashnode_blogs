@@ -62,7 +62,7 @@ sudo apt-get install xterm
 
 We will set up a simple network topology with two PCs and two routers connected through different collision domains (network segments).
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731394953/4dea2339-799a-4930-9a73-5a63eb79fff1.png align="center")
+![](https://cdn-images-1.medium.com/max/800/1*c76NZG0EKnKugtRsSoGSgQ.png align="left")
 
 ### IP Addresses and Interfaces
 
