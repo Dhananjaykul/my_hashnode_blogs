@@ -5,6 +5,7 @@ seoDescription: "Learn how to configure static routes in Kathara for network con
 datePublished: Wed May 22 2024 09:12:23 GMT+0000 (Coordinated Universal Time)
 cuid: clwhlvezx000h09ky4nr045bi
 slug: kathara-network-configuration-and-documentation
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1720958754263/cbf53447-cd8f-445e-9747-3a18cf994f72.png
 tags: networking, networksimulation, kathara, static-routing
 
 ---
@@ -23,7 +24,7 @@ Dynamic routing is calculated by using dynamic routing algorithms. Dynamic routi
 
 Below is an example of a topology that we are going to configure static routes for. In the topology, PC1 will not be able to communicate with PC2 and vice versa until a static route is created.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731350335/42d8ac4c-4cfa-48f9-a350-f95206068822.png align="center")
+![](https://cdn-images-1.medium.com/max/800/1*c76NZG0EKnKugtRsSoGSgQ.png align="left")
 
 This is a network diagram that is going to be used to help demonstrate IPv4 static route. In this topology, we are using /24 as our subnet mask.
 
@@ -150,7 +151,7 @@ kathara lstart
 
 Check connectivity within directly connected networks.
 
-**Ping from** `pc1` to `r1`
+**Ping from**`pc1` to `r1`
 
 ```bash
 root@pc1:~$ ping 192.168.1.1
@@ -160,7 +161,7 @@ Expected result:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716731774574/9e156039-32bf-4681-9e86-919a6822fced.png align="center")
 
-**Ping from** `pc2` to `r2`
+**Ping from**`pc2` to `r2`
 
 ```bash
 root@pc2:~$ ping 192.168.2.1
@@ -174,7 +175,7 @@ Expected result:
 
 Attempt to ping networks that are not directly connected.
 
-**Ping from** `pc1` to `r2`
+**Ping from**`pc1` to `r2`
 
 ```bash
 root@pc1:~$ ping 10.0.0.2
@@ -188,13 +189,13 @@ Expected result:
 
 To enable `pc1` and `pc2` to reach networks beyond their directly connected segment, add default routes.
 
-**On** `pc1`
+**On**`pc1`
 
 ```bash
 root@pc1:~$ ip route add default via 192.168.1.1 dev eth0
 ```
 
-**On** `pc2`
+**On**`pc2`
 
 ```bash
 root@pc2:~$ ip route add default via 192.168.2.1 dev eth0
@@ -202,13 +203,13 @@ root@pc2:~$ ip route add default via 192.168.2.1 dev eth0
 
 ### Verify Default Routes
 
-**Check routing table on** `pc1`
+**Check routing table on**`pc1`
 
 ```bash
 root@pc1:~$ ip route
 ```
 
-**Check routing table on** `pc2`
+**Check routing table on**`pc2`
 
 ```bash
 root@pc2:~$ ip route
@@ -236,7 +237,7 @@ root@r2:~$ ip route add 192.168.1.0/24 via 10.0.0.1 dev eth1
 
 ### Verify Static Routes
 
-**Check routing table on** `r1`
+**Check routing table on**`r1`
 
 ```bash
 root@r1:~$ ip route
@@ -246,7 +247,7 @@ Expected result:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1716733678724/5bce65af-4e52-43cd-93fc-1df79696e000.png align="center")
 
-**Check routing table on** `r2`
+**Check routing table on**`r2`
 
 ```bash
 root@r2:~$ ip route
