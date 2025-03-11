@@ -164,15 +164,85 @@ Factors to consider:
 
 #### **Hands-On: IAM Policy Testing**
 
-1. Sign in as the **root user** and create an IAM user.
+This hands-on exercise demonstrates how IAM policies work in AWS by assigning and revoking permissions. Follow these steps while performing the actions in your AWS account.
+
+#### **1\. Sign in as the Root User & Create an IAM User**
+
+* Log in to the **AWS Management Console** using the root account.
     
-2. Assign the **IAM ReadOnlyAccess** policy.
+* Navigate to **IAM (Identity and Access Management)**.
     
-3. Log in as the IAM user and try accessing the **IAM Dashboard**.
+* Under the **Users** section, click **Add User**.
     
-4. Remove the **ReadOnlyAccess** permission and test access again.
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741709430709/a081a301-2df5-4c37-883e-a616b446bff8.png align="center")
     
-5. Observe that access is revoked.
+* Enter a username (e.g., `test-user`).
+    
+* Choose **"AWS Management Console access"** and set a password.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741709700940/5e3d43c6-ca7d-4173-b2a6-a811a818dce3.png align="center")
+    
+* Click **Next** without assigning permissions yet.
+    
+* Review the details and click **Create user**.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741709825165/17f0eef6-0be3-4b76-b8e9-924d04b6f332.png align="center")
+    
+
+#### **2\. Assign the IAM ReadOnlyAccess Policy**
+
+* In the IAM Dashboard, go to **Users** and select the newly created user.
+    
+* Click on the **Permissions** tab and choose **Add Permissions** → **Attach policies directly**.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741709908087/05781598-d52d-49ce-b3b2-e60512fef348.png align="center")
+    
+* Search for **ReadOnlyAccess** and select it.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741709963300/900bd5e9-edaf-491c-b5ee-2308615e630a.png align="center")
+    
+* Click **Next**, review, and then **Add permissions**.
+    
+* The user now has read-only access to AWS resources.
+    
+
+#### **3\. Log in as the IAM User & Test Access**
+
+* Sign out from the root account or log in from incognitive mode.
+    
+* Log in to the **AWS Console** using the IAM user’s credentials.
+    
+* Try navigating to various AWS services (e.g., EC2, S3, IAM).
+    
+* The user should be able to view resources but **not modify them**.
+    
+* Attempt to access the **IAM Dashboard**—it should be **read-only**, meaning no changes can be made.
+    
+
+#### **4\. Remove ReadOnlyAccess Permission & Re-Test**
+
+* Sign out from the IAM user account and log back in as the **root user**.
+    
+* Go to **IAM** → **Users** and select the IAM user.
+    
+* In the **Permissions** tab, remove the **ReadOnlyAccess** policy.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741710382793/4321fd10-e26f-4c74-a1b9-f79b79d68060.png align="center")
+    
+* Save changes and sign out.
+    
+
+#### **5\. Log in Again as the IAM User & Observe the Restriction**
+
+* Log in with the IAM user’s credentials again.
+    
+* Try accessing any AWS service or the IAM Dashboard.
+    
+* **Access should now be denied**, confirming that permissions are enforced properly
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741710455212/2a9602a7-1656-4251-9518-a27a4e973f38.png align="center")
+    
+* **Add back policy to the user again, which will be useful in further demos.**
     
 
 ---
