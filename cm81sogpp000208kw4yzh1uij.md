@@ -299,39 +299,53 @@ Three ways to access AWS:
 
 ### **AWS CLI Setup on Windows**
 
-1. **Download AWS CLI** [from AWS](https://aws.amazon.com/cli/)
+1. #### **1\. Create Access Keys for IAM User**
     
-2. **Verify installation**: Open CLI and run:
+    To interact with AWS using the CLI, you need access keys. Follow these steps to generate them:
     
-    ```sh
-    aws --version
-    ```
+    * Log in to the **AWS Management Console** as an IAM user with appropriate permissions.
+        
+    * Navigate to **IAM (Identity and Access Management)**.
+        
+    * Go to **Security Credentials** under your IAM user settings(remember the user we created earlier).
+        
+    * Click **Create Access Key**.
+        
+    * Copy the **Access Key ID** and **Secret Access Key** (store them securely).
+        
     
-3. **Configure AWS CLI**:
+    #### **2\. Configure AWS CLI**
     
-    ```sh
-    aws configure
-    ```
+    Now, set up AWS CLI on your local machine using the generated access keys.
     
-4. Enter **Access Key ID** and **Secret Access Key**.
+    * Open a terminal or command prompt.
+        
+    * Run the following command:
+        
+        ```sh
+        aws configure
+        ```
+        
+    * Enter the requested details:
+        
+        * **AWS Access Key ID**: (Paste the copied key)
+            
+        * **AWS Secret Access Key**: (Paste the secret key)
+            
+        * **Default region**: (e.g., `us-east-1` or your preferred region)
+            
+        * **Default output format**: (Choose `json`, `table`, or `text`)
+            
     
-5. Test with:
+    #### **3\. Verify IAM Users via AWS CLI**
+    
+    Once configured, use AWS CLI commands to list IAM users:
     
     ```sh
     aws iam list-users
     ```
     
-
-#### **Hands-On: AWS CLI**
-
-1. **Create Access Keys**: IAM &gt; Security Credentials &gt; Create Access Key.
-    
-2. **Use AWS CLI**:
-    
-    ```sh
-    aws configure
-    aws iam list-users
-    ```
+    This command retrieves a list of IAM users in your AWS account. If configured correctly, the output will display user details.
     
 
 ---
