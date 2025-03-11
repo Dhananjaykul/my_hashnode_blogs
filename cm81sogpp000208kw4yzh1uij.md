@@ -5,6 +5,7 @@ seoDescription: "Prepare for the AWS Solutions Architect Associate exam with fou
 datePublished: Sun Mar 09 2025 15:35:05 GMT+0000 (Coordinated Universal Time)
 cuid: cm81sogpp000208kw4yzh1uij
 slug: aws-solutions-architect-associate-preparation-day-1
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1741708858743/8007ac4f-1e3f-48f0-8960-abf083570ddd.png
 tags: aws, solutionarchitect
 
 ---
