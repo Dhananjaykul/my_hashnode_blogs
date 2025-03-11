@@ -120,6 +120,23 @@ Factors to consider:
     
 * **IAM Permissions:** Managed through **policies** (JSON-based documents).
     
+    ![Diagram showing three user groups: Developer, Audit, and Ops, each associated with a policy document and connected to a user icon. An additional inline policy is shown with a red X, indicating disallowed direct assignment to a user.](https://cdn.hashnode.com/res/hashnode/image/upload/v1741708527680/a154ae60-2074-4dd5-bfcb-91570cdb86c6.png align="center")
+    
+
+### AWS IAM Policy Inheritance Best Practices
+
+* **Policies should be assigned to groups, not individuals.**
+    
+* **Users inherit permissions based on group membership.**
+    
+* **A single user should not have policies assigned directly.**
+    
+* **Group-based access ensures scalability and security.**
+    
+* **Engineers in multiple groups inherit permissions from all assigned groups.**
+    
+* **This approach follows AWS best practices for IAM security.**
+    
 
 ### **IAM Hands-On: Users & Groups**
 
