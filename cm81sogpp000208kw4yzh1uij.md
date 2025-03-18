@@ -288,13 +288,7 @@ This hands-on exercise demonstrates how IAM policies work in AWS by assigning an
 
 ## Accessing AWS Services
 
-Three ways to access AWS:
-
-1. **AWS Management Console**: Web-based UI, login via password & MFA.
-    
-2. **AWS CLI**: Command-line access using **Access Key ID & Secret Key**.
-    
-3. **AWS SDK**: Programmatic access using APIs (Supports Python, Java, Node.js, etc.).
+1. ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742291292073/828db6a2-d316-451f-b7f5-fe6c70111544.png align="center")
     
 
 ### **AWS CLI Setup on Windows**
@@ -377,7 +371,9 @@ Three ways to access AWS:
 
 1. Open **CloudShell** from AWS Console.
     
-2. Check installed AWS CLI version:
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742290810149/fc4ac938-54d5-47be-8c7b-b9b726620ea7.png align="center")
+    
+2. Check installed AWS CLI version(you will notice that the AWS CLI is already installed):
     
     ```sh
     aws --version
@@ -426,12 +422,14 @@ Some AWS services need roles to perform actions on your behalf.
     
 * Download from **IAM &gt; Credentials Report**.
     
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742291536593/8d1a2daf-f11b-45fa-aeff-65cedcabfa0b.png align="center")
+    
 
 ### **IAM Access Advisor (User Level)**
 
 * Shows last accessed AWS services for each user.
     
-* Helps refine IAM permissions.
+* Helps refine IAM permissions & policies.
     
 
 ---
@@ -439,6 +437,8 @@ Some AWS services need roles to perform actions on your behalf.
 ## IAM Best Practices
 
 ✅ Avoid using the root account. ✅ One physical user = One IAM user. ✅ Assign users to groups and manage permissions at the group level. ✅ Implement **strong password policies & MFA**. ✅ Use **IAM Roles** for AWS services. ✅ Audit permissions using **IAM Credentials Report & IAM Access Advisor**. ✅ **Never share** IAM access keys.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742292161537/8c7eee79-f333-400b-a9dc-37912e6cfd8c.png align="center")
 
 ---
 
