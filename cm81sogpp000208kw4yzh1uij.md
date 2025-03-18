@@ -5,7 +5,7 @@ seoDescription: "These are my Notes made for AWS Solutions Architect Associate e
 datePublished: Sun Mar 09 2025 15:35:05 GMT+0000 (Coordinated Universal Time)
 cuid: cm81sogpp000208kw4yzh1uij
 slug: aws-solutions-architect-associate-preparation-day-1
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1741708858743/8007ac4f-1e3f-48f0-8960-abf083570ddd.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1742293424720/70a76cd2-10ec-4775-be14-fd69049c7189.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1742293366935/b874957e-dd3f-4aac-a13a-57881ffb72db.png
 tags: aws, solutionarchitect
 
