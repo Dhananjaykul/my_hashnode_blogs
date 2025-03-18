@@ -307,14 +307,24 @@ Three ways to access AWS:
         
     * Navigate to **IAM (Identity and Access Management)**.
         
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742289227376/4cdef08d-edce-4cb5-baac-9a20d0ee8d2c.png align="center")
+        
     * Go to **Security Credentials** under your IAM user settings(remember the user we created earlier).
         
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742289263604/797e9b2a-9d48-4e42-aaf8-61ee38251425.png align="center")
+        
     * Click **Create Access Key**.
+        
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742289286932/965acf73-5d86-4709-86e3-545d1213ed1b.png align="center")
+        
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742289313146/5a44649a-d0ad-4c9b-99db-98584081957a.png align="center")
+        
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742289369091/b05e951c-0952-4f0f-827f-a79b10e8453d.png align="center")
         
     * Copy the **Access Key ID** and **Secret Access Key** (store them securely).
         
     
-    #### **2\. Configure AWS CLI**
+    #### **2\. Configure AWS CLI (Make sure AWS CLI is installed if not then install it first)**
     
     Now, set up AWS CLI on your local machine using the generated access keys.
     
@@ -336,6 +346,8 @@ Three ways to access AWS:
             
         * **Default output format**: (Choose `json`, `table`, or `text`)
             
+            ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742290157664/e2fd0590-51fb-4f00-9a61-f9e14fb2a54f.png align="center")
+            
     
     #### **3\. Verify IAM Users via AWS CLI**
     
@@ -346,6 +358,8 @@ Three ways to access AWS:
     ```
     
     This command retrieves a list of IAM users in your AWS account. If configured correctly, the output will display user details.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742290206818/25695589-bf0c-4dd8-b637-61a2e61dd36b.png align="center")
     
 
 ---
