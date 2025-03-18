@@ -406,11 +406,17 @@ Some AWS services need roles to perform actions on your behalf.
 
 1. Navigate to **IAM &gt; Roles &gt; Create Role**.
     
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742294988911/1bdd54b0-b35c-4f62-a649-513884256153.png align="center")
+    
 2. Select **AWS Service &gt; Use Case = EC2**.
     
 3. Attach **IAM ReadOnlyAccess Policy**.
     
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742295067756/f14469b0-cbb5-426a-851f-a88537272c4c.png align="center")
+    
 4. Name the role and create it.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742295122585/c17fdb7d-b3bc-40dc-913a-e39fbe4c3cea.png align="center")
     
 
 ---
