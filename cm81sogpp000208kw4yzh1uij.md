@@ -1,7 +1,7 @@
 ---
 title: "AWS Solutions Architect Associate Preparation - Day 1"
 seoTitle: "AWS Solutions Architect Study Guide Day 1"
-seoDescription: "Prepare for the AWS Solutions Architect Associate exam with foundational concepts, AWS infrastructure, IAM basics, security tools, and best practices"
+seoDescription: "These are my Notes made for AWS Solutions Architect Associate exam with foundational concepts, IAM practices, and hands-on activities."
 datePublished: Sun Mar 09 2025 15:35:05 GMT+0000 (Coordinated Universal Time)
 cuid: cm81sogpp000208kw4yzh1uij
 slug: aws-solutions-architect-associate-preparation-day-1
