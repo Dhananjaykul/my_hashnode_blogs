@@ -300,28 +300,38 @@ echo "<h1>Hello world from $(hostname -f)</h1>" > /var/www/html/index.html
 
 ---
 
-### **EC2 Instance Roles Demo**
+### **EC2 Instance Roles demo**
 
 * In our aws instance we will have AWS CLI already installed.
     
-* let's say we want to perform some task like “aws iam list-users”, we will need to configure aws cli in this instance by adding secret access key & access key ID.
+* let's say we want to perform some task like “aws iam list-users”, we will need to configure aws cli in this instance by adding secret access key & access key ID (We have seen this in Day-1 of our series).
     
 * Now this is a very bad idea as anyone using my account may get access to these credentials.
     
-* Never apply these keys in real instance & hence an alternative is IAM roles
+* Never apply these keys in real instance & hence an alternative is IAM roles.
     
 
 ### **Hands-ON**
 
 * Go to Management Console &gt; IAM.
     
-* Create a role with the policy readIAMonly.
+* Create a role with the policy readIAMonly (I think I have already created in Day-1).
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742455261102/1e869e91-00e2-4347-89a1-ccfd654d6762.png align="center")
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742455356988/a3328077-e024-4df2-8d08-cd90f532303c.png align="center")
     
 * Return to the instance &gt; actions &gt; security &gt; modify IAM role.
     
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742455433384/e7610e2c-9ec7-48e0-ac4c-0329cbe91bcf.png align="center")
+    
 * Select the role and save to attach it.
     
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742456014504/6b3223b7-f5e7-40fc-a9db-0fc29d5e42ee.png align="center")
+    
 * Now, run “aws iam list-users” and it works. Hurrah!
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742456137672/1e39efd6-a1ed-41f4-aed2-02422b434938.png align="center")
     
 
 ## EC2 Purchasing Options
