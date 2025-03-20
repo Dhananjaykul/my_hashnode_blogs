@@ -263,9 +263,17 @@ echo "<h1>Hello world from $(hostname -f)</h1>" > /var/www/html/index.html
 
 * EC2 &gt; security groups &gt; click any security group &gt; details, inbound, outbound rules of the security group present.
     
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742454629099/c144372d-0afa-49f8-88cd-deb7ceecf26f.png align="center")
+    
 * Deleting port 80 from the security group, the html page that was loaded will say timeout.
     
-* Now add back the rule you deleted.
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742454722695/136f7c55-f8ab-4ce5-a75c-404c40a67baa.png align="center")
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742454796644/2aae9bfe-2c8d-4983-ba68-7f3fa4154635.png align="center")
+    
+* Now add back the rule you deleted(Security group &gt; Edit Inbound rule &gt; add rule).
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742454899089/263653c6-03fa-423d-8400-601d5d96609f.png align="center")
     
 
 ---
