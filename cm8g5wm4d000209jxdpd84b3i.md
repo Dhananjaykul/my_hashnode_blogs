@@ -30,6 +30,10 @@ These are my notes while preparing for the **AWS Solutions Architect Associate-L
         
         * **Login as root** → **Accounts** → **IAM user & role access to billing info** → **Edit** → **Activate IAM access**.
             
+            ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742452721624/21d5b971-18e8-4277-a133-840f2fe10636.png align="center")
+            
+            ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742452770660/dc9631db-822c-4e64-93c5-1c8b239aba11.png align="center")
+            
 3. **Exploring Billing & Cost Management:**
     
     * View **bills** & check **charges by service**.
@@ -40,13 +44,19 @@ These are my notes while preparing for the **AWS Solutions Architect Associate-L
     
     * **Zero Cost Budget:**
         
-        * **Billing & Cost Management** → **Budget** → **Use a template** → **Zero Spend Budget** → **Add email** → **Create Budget**.
+        * **Billing & Cost Management** → **Budget** → **Create Budget** → **Use a template** → **Zero Spend Budget** → **Add email** → **Create Budget**.
+            
+            ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742453341869/062894a3-f5a2-466b-ada0-62fbfa1e6034.png align="center")
+            
+            ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742453406368/98ff453b-3130-46ba-8f6e-c1e44ed910e3.png align="center")
             
     * **Monthly Cost Budget ($10 Example):**
         
-        * Follow the same procedure.
+        * Follow the same procedure, in templates select what you want like “Monthly cost budget“
             
         * When actual spending reaches **85%**, an alert is sent to the email.
+            
+            ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742453557211/68c276d4-7b52-461b-8947-05bbb3ed82cc.png align="center")
             
 
 ---
@@ -243,7 +253,7 @@ echo "<h1>Hello world from $(hostname -f)</h1>" > /var/www/html/index.html
 
 * EC2 &gt; security groups &gt; click any security group &gt; details, inbound, outbound rules of the security group present.
     
-* Deleting port 80 from the security group, the html page that was loaded will say timeout. 
+* Deleting port 80 from the security group, the html page that was loaded will say timeout.
     
 * Now add back the rule you deleted.
     
