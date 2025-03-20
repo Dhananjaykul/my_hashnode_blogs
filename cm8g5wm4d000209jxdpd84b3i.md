@@ -289,7 +289,7 @@ echo "<h1>Hello world from $(hostname -f)</h1>" > /var/www/html/index.html
 3. **EC2 Instance Connect** (No need for key pair)
     
 
-### Hands-On: EC2 Instance Connect
+### Try it your self: EC2 Instance Connect
 
 1. **Try connecting using EC2 Instance Connect.**
     
