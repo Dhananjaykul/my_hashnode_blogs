@@ -127,11 +127,15 @@ These are my notes while preparing for the **AWS Solutions Architect Associate-L
     
     * Name: `<some name>`
         
-    * Add tags (optional)
+    * Add tags (optional), used for identifying resources on AWS
         
     * **AMI:** Amazon Linux (Free Tier)
         
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742453867091/48875e56-73a1-4988-828f-db45588c2133.png align="center")
+        
     * **Instance Type:** `t2.micro`
+        
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742453888225/90c67851-a92f-42a7-a17e-6e74ab5247a4.png align="center")
         
     * **Key Pair:** Create a new key pair
         
@@ -142,6 +146,8 @@ These are my notes while preparing for the **AWS Solutions Architect Associate-L
         * Format: `.pem` (Mac, Windows 10+) or `.ppk` (Windows 7)
             
     * **Security Group:** Allow **Ports 22 (SSH) & 80 (HTTP)**
+        
+        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742453952146/57e358b1-4e81-4250-8775-b955a416daee.png align="center")
         
 2. **User Data (Auto-Startup Script):**
     
@@ -161,6 +167,10 @@ echo "<h1>Hello world from $(hostname -f)</h1>" > /var/www/html/index.html
         
     * Once ready, note the **public IP** to access the website.
         
+4. Paste the public IP of the Instance in your browser, and observe the page being displayed.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1742454258247/96e85782-9056-477e-9b27-e95bf15686cd.png align="center")
+    
 
 > **Note:** If the instance stops and starts again, the **public IP will change**, but the **private IP remains the same**.
 
