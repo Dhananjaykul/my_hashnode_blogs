@@ -6,7 +6,7 @@ datePublished: Mon Sep 04 2023 16:01:51 GMT+0000 (Coordinated Universal Time)
 cuid: clm52knft000309mvcsiofwl8
 slug: how-i-passed-hashicorp-certified-terraform-associate-exam-in-first-attempt
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1693842674490/7c5dae5d-0738-4dca-acf9-6e1386061778.png
-tags: devops, terraform, certification, cloudcomputing-cloud-technology-cybersecurity-aws-bigdata-devops-it-datacenter-azure-cloudstorage-linux-programming-software-tech-iot-cloudservices-coding-cloudsecurity-machinelearning-informationtechnology-datascience-business-python-security-microsoft-dataprotection-networksecurity-data-artificialintelligence, hashicorp
+tags: terraform, certification, hashicorp
 
 ---
 
