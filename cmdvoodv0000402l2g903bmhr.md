@@ -181,6 +181,6 @@ We'll explore this in the next post, but understanding it now will enhance your 
 
 You've accomplished more than many do in their careers by building something from scratch in the cloud. Celebrate your achievement!
 
-Did you successfully display your "I AM LEARNING AZURE!" page? Encounter any issues? Share your experience in the comments. Your feedback helps everyone.
+Did you successfully display your "I AM LEARNING AZURE!" page? Encounter any issues? Share your experience in the comments. Your feedback helps everyone. Also Don’t forget to delete that RG we created.
 
 Stay tuned for our next post, where we'll transform our single VM into a robust, auto-scaling web application. See you then!
